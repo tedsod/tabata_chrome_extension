@@ -3,27 +3,13 @@
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
 const ALERT_THRESHOLD = 5;
+var counter = 0
 
-const COLOR_CODES = {
-  info: {
-    color: "green"
-  },
-  warning: {
-    color: "orange",
-    threshold: WARNING_THRESHOLD
-  },
-  alert: {
-    color: "red",
-    threshold: ALERT_THRESHOLD
-  }
-};
 
-const TIME_LIMIT = 20;
-let timePassed = 0;
-let timeLeft = TIME_LIMIT;
 let timerInterval = null;
 let remainingPathColor = COLOR_CODES.info.color;
 
+function setTimerDisplay(){
 document.getElementById("app").innerHTML = `
 <div class="base-timer">
   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +33,8 @@ document.getElementById("app").innerHTML = `
   )}</span>
 </div>
 `;
-
+}
+setTimerDisplay()
 document.addEventListener("DOMContentLoaded", function () {
     var clickMeButton = document.getElementById("start");
   
@@ -57,11 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
-function onTimesUp() {
-  clearInterval(timerInterval);
-}
+
 
 function startTimer() {
+  counter += 1
   timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;

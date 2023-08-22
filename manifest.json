@@ -2,7 +2,10 @@
   "manifest_version": 3,
   "name": "tabata work timer",
   "version": "1.0",
-  "description": "Tabata timer to chrome",
+  "description": "Tabata timer to chrome", 
+  "background": {
+    "service_worker": "background.js"
+  },
   "icons": {
     "48": "/images/timer_icon48.png",
     "128": "/images/timer_icon128.png"
