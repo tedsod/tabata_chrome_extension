@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "tabata work timer",
+  "version": "1.0",
+  "description": "Tabata timer to chrome",
+  "icons": {
+    "48": "/images/timer_icon48.png",
+    "128": "/images/timer_icon128.png"
+  },
+  "permissions": ["activeTab"],
+  "action": {
+    "default_popup": "main.html",
+    "default_icon": {
+      "16": "/images/timer_icon16.png",
+      "48": "/images/timer_icon48.png",
+      "128": "/images/timer_icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css" : ["main.css"],
+      "js": ["content.js"]
+    }
+  ]
+}
